@@ -72,7 +72,7 @@ const IconsWrapper = styled.div`
 
 function CustomFooter() {
   return (
-    <Footer>
+    <Footer id="contact">
       <Container>
         <Row>
           <Col xs="12" sm="6" md="2" lg="2">
@@ -81,10 +81,15 @@ function CustomFooter() {
           <Col xs="12" sm="6" md="10" lg="10">
             <Row className="justify-content-md-end">
               <Nav className="links-menu">
-                <Nav.Link href="#home">PÁGINA INICIAL</Nav.Link>
-                <Nav.Link href="#home">PROGRAMAÇÃO</Nav.Link>
-                <Nav.Link href="#home">INSCRIÇÕES</Nav.Link>
-                <Nav.Link href="#home">CONTATO</Nav.Link>
+                <Nav.Link href="/#schedule" rel="noopener">
+                  PROGRAMAÇÃO
+                </Nav.Link>
+                <Nav.Link href="/#subscription" rel="noopener">
+                  INSCRIÇÕES
+                </Nav.Link>
+                <Nav.Link href="/#contact" rel="noopener">
+                  CONTATO
+                </Nav.Link>
               </Nav>
             </Row>
             <Row>

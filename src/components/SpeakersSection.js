@@ -75,6 +75,12 @@ const SpeakerItem = styled.article`
     border-radius: 30px;
     border-bottom-left-radius: 0;
     object-fit: cover;
+    width: 200px;
+    height: 100px;
+    @media screen and (max-width: 450px) {
+      width: 150px;
+      height: 80px;
+    }
   }
   div {
     flex-direction: column;
@@ -103,12 +109,7 @@ function SpeakersSection() {
               {motives.map(item => (
                 <SpeakerItem key={item.id}>
                   <span>
-                    <img
-                      src={item.picture}
-                      alt={item.name}
-                      width={200}
-                      height={100}
-                    />
+                    <img src={item.picture} alt={item.name} />
                   </span>
                   <div>
                     <DescriptionText textTheme="light">
