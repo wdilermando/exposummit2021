@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import ck1 from '../assets/images/ck1.png';
 
 const GlobalStyle = createGlobalStyle`
   body {
