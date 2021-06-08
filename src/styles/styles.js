@@ -36,7 +36,12 @@ export const SubtitleText = styled.h5`
 
 export const MainTitle = styled.h2`
   text-transform: uppercase;
-  color: ${({ textTheme }) => (textTheme === 'light' ? '#FFFFFF' : '#225C9C')};
+  color: ${({ textTheme, theme }) =>
+    textTheme === 'primary'
+      ? theme.colors.primary
+      : textTheme === 'secondary'
+      ? theme.colors.secondary
+      : theme.colors.light};
   font-size: 26px;
   font-weight: 700;
   text-align: ${({ textAlign }) =>

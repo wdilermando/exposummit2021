@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import logo from '../assets/images/logo2.png';
 import fbImage from '../assets/images/socials/facebook.png';
+import LeadForm from './LeadForm';
 
 const Footer = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
@@ -43,19 +44,15 @@ const WrapperFormLead = styled.div`
     margin-right: 5px;
     width: 50%;
   }
-`;
 
-const CustomButton = styled.button`
-  background-color: ${({ theme }) => theme.colors.secondary};
-  border: none;
-  margin-bottom: 0.5em;
-  color: ${({ theme }) => theme.colors.light};
-  border-radius: 4px;
-  padding: 0.4em 0.8em;
-  transition: background-color 0.3s linear;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
-    transition: background-color 0.3s linear;
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+
+    small {
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
   }
 `;
 
@@ -94,25 +91,13 @@ function CustomFooter() {
             </Row>
             <Row>
               <Col lg="8">
-                <Form inline>
-                  <WrapperFormLead>
-                    <small>
-                      Deixe seu email e receba novidades exclusivas do nosso
-                      evento
-                    </small>
-                    <InputGroup className="w-100">
-                      <FormControl
-                        id="email"
-                        placeholder="Seu melhor email"
-                        type="email"
-                        required
-                      />
-                      <InputGroup.Append>
-                        <CustomButton type="submit">Enviar</CustomButton>
-                      </InputGroup.Append>
-                    </InputGroup>
-                  </WrapperFormLead>
-                </Form>
+                <WrapperFormLead>
+                  <small>
+                    Deixe seu email e receba novidades exclusivas do nosso
+                    evento
+                  </small>
+                  <LeadForm />
+                </WrapperFormLead>
               </Col>
               <Col lg="4">
                 <InfosSocial>

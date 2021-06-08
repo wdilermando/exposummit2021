@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import ck1 from '../assets/images/ck1.png';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,6 +19,22 @@ const GlobalStyle = createGlobalStyle`
   }
   .links-menu a {
       color: white !important;
+  }
+  .inputLabel {
+    background-color: #225C9C !important;
+    color:#fff;
+    font-weight: 700;
+  }
+
+  .inputLabel::placeholder {
+    color: white;
+  }
+  .form-group input::placeholder{
+    color:#225C9C;
+    font-weight: 700;
+  }
+  .custom-checkbox label{
+    color:#225C9C !important;
   }
 `;
 

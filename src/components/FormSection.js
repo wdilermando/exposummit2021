@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { Col, Container, Row } from 'react-bootstrap';
-import { DescriptionText, SectionInfo } from '../styles/styles';
+import { DescriptionText, SectionInfo, MainTitle } from '../styles/styles';
 import sketch from '../assets/images/sketch.png';
 import bubble from '../assets/images/bubble1.png';
+import SubscriptionForm from './SubscriptionForm';
 
 function FormSection() {
   return (
@@ -31,7 +32,14 @@ function FormSection() {
               mais.
             </DescriptionText>
           </Col>
-          <Col />
+          <Col>
+            <div className="mt-5">
+              <MainTitle textTheme="primary" textAlign="center">
+                INSCREVA-SE GRATUITAMENTE
+              </MainTitle>
+              <SubscriptionForm />
+            </div>
+          </Col>
         </Row>
       </Container>
     </SectionInfo>
