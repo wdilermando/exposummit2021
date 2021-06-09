@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
+import { ToastContainer, toast } from 'react-toastify';
+import subscriptionLead from '../utils/subscriptionLead';
 
 const list1 = [
   { id: 1, name: 'IMÓVEL PARA RESIDIR' },
@@ -47,12 +49,32 @@ const schema = Yup.object().shape({
 });
 
 function SubscriptionForm() {
+  const formRef = useRef(null);
   const [investir, setInvestir] = useState(false);
   const [interesse, setInteresse] = useState(false);
+
+  async function onSubmit(values) {
+    const userLead = {
+      nome_contato: values.fullName,
+      email: values.email,
+      telefone: values.phone,
+      cidade: values.city,
+      interesses: values.checked.toString(),
+      outros: values?.others,
+    };
+    const envia = await subscriptionLead(userLead);
+    if (envia.status === 200) {
+      toast(`Enviado com sucesso!`);
+      formRef.current.reset();
+    } else {
+      toast(`Falha ao enviar, tente novamente mais tarde!`);
+    }
+  }
+
   return (
     <Formik
       validationSchema={schema}
-      onSubmit={console.log}
+      onSubmit={onSubmit}
       initialValues={{
         checked: [],
         city: '',
@@ -62,16 +84,8 @@ function SubscriptionForm() {
         phone: '',
       }}
     >
-      {({
-        handleSubmit,
-        handleChange,
-        handleBlur,
-        values,
-        touched,
-        isValid,
-        errors,
-      }) => (
-        <Form noValidate onSubmit={handleSubmit}>
+      {({ handleSubmit, handleChange, values, touched, errors }) => (
+        <Form noValidate onSubmit={handleSubmit} ref={formRef}>
           <Form.Group controlId="formGroupName">
             <CustomFormInput
               type="text"
@@ -197,6 +211,7 @@ function SubscriptionForm() {
           <WrapperButton>
             <CustomButton type="submit">ENVIAR</CustomButton>
           </WrapperButton>
+          <ToastContainer />
         </Form>
       )}
     </Formik>

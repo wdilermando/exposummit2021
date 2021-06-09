@@ -1,5 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import Image from 'next/image';
+import logo from '../assets/images/logo1.png';
 
 function CustomNavbar() {
   return (
@@ -8,7 +10,7 @@ function CustomNavbar() {
         href="#home"
         className="d-block d-sm-block d-md-block d-xl-none d-lg-none"
       >
-        Expo Imóvel - Summit 2021
+        <Image src={logo} alt="logo mobile" width={100} height={50} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">

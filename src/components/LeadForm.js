@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import styled from 'styled-components';
+import { ToastContainer, toast } from 'react-toastify';
+import sendLead from '../utils/sendLead';
 
 const CustomButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.secondary};
@@ -23,17 +25,28 @@ const schema = Yup.object().shape({
 });
 
 function LeadForm() {
+  const formRef2 = useRef(null);
+  async function onSubmit({ email }) {
+    const envia = await sendLead(email);
+    if (envia.status === 200) {
+      toast(`Enviado com sucesso!`);
+      formRef2.current.reset();
+    } else {
+      toast(`Falha ao enviar, tente novamente mais tarde!`);
+    }
+  }
+
   return (
     <Formik
       validationSchema={schema}
-      onSubmit={console.log}
+      onSubmit={onSubmit}
       initialValues={{
         email: '',
       }}
     >
       {({ handleSubmit, handleChange, values, touched, isValid, errors }) => (
-        <Form noValidate onSubmit={handleSubmit}>
-          <Form.Group a controlId="validationFormikEmail">
+        <Form noValidate ref={formRef2} onSubmit={handleSubmit}>
+          <Form.Group controlId="validationFormikEmail">
             <InputGroup hasValidation>
               <Form.Control
                 type="email"
@@ -50,6 +63,7 @@ function LeadForm() {
               </InputGroup.Append>
             </InputGroup>
           </Form.Group>
+          <ToastContainer />
         </Form>
       )}
     </Formik>

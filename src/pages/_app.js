@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Layout from '../components/Layout';
 import GlobalStyle from '../styles/globalStyles';
 

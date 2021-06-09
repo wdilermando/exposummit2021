@@ -9,8 +9,8 @@ import {
   BubbleText,
   HighLightText,
 } from '../styles/styles';
-import logo from '../assets/images/logo2.png';
-import bgMain from '../assets/images/bgMain.jpg';
+import logo from '../assets/images/logo1.png';
+import bgMain from '../assets/images/bgMain.png';
 
 const HeroWrapper = styled.article`
   display: flex;
@@ -38,7 +38,7 @@ function HeroSection() {
   return (
     <SectionInfo id="main" bg={bgMain} hero>
       <HeroWrapper>
-        <Image src={logo} alt="logo" width={300} height={150} />
+        <Image src={logo} alt="logo" width={300} height={170} />
         <BubbleText>04 a 07 de agosto</BubbleText>
         <DescriptionText textTheme="light" textAlign="center">
           Saiba como faturar mais com imóveis. Participe do evento online que
