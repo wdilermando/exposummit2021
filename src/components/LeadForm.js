@@ -46,7 +46,7 @@ function LeadForm() {
     >
       {({ handleSubmit, handleChange, values, touched, isValid, errors }) => (
         <Form noValidate ref={formRef2} onSubmit={handleSubmit}>
-          <Form.Group controlId="validationFormikEmail">
+          <Form.Group controlId="validationFormikEmail" className="mb-0">
             <InputGroup hasValidation>
               <Form.Control
                 type="email"

@@ -56,6 +56,8 @@ export const HighLightText = styled.span`
 `;
 
 export const BubbleText = styled.span`
+  font-size: 22px;
+  font-weight: 700;
   margin-top: 20px;
   background: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.light};

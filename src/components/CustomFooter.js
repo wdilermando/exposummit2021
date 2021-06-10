@@ -5,6 +5,7 @@ import Image from 'next/image';
 import logo from '../assets/images/logo2.png';
 import { FbImage, IgImage, YtImage } from '../assets/images/socials';
 import LeadForm from './LeadForm';
+import { FACEBOOK_LINK, INSTAGRAM_LINK } from '../utils/constants';
 
 const Footer = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
@@ -28,7 +29,7 @@ const WrapperFormLead = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   small {
     text-align: right;
@@ -39,6 +40,7 @@ const WrapperFormLead = styled.div`
 
   @media screen and (max-width: 450px) {
     flex-direction: column;
+    align-items: center;
 
     small {
       text-align: center;
@@ -95,7 +97,7 @@ function CustomFooter() {
                 <InfosSocial>
                   <span>INFOS:{'\n'}contato@expoimovel.com</span>
                   <IconsWrapper>
-                    <a target="_blank" href="#" rel="noreferrer">
+                    <a target="_blank" href={FACEBOOK_LINK} rel="noreferrer">
                       <img
                         src={FbImage}
                         alt="facebook link"
@@ -103,7 +105,7 @@ function CustomFooter() {
                         height={25}
                       />
                     </a>
-                    <a target="_blank" href="#" rel="noreferrer">
+                    <a target="_blank" href={INSTAGRAM_LINK} rel="noreferrer">
                       <img
                         src={IgImage}
                         alt="instagram link"
