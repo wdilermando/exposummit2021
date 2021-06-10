@@ -2,7 +2,14 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { DescriptionText, MainTitle, SectionInfo } from '../styles/styles';
-import silvio from '../assets/images/speakers/silvio.jpg';
+import {
+  Silvio,
+  Eduardo,
+  Gustavo,
+  Joao,
+  Peixoto,
+  Saulo,
+} from '../assets/images/speakers';
 
 const motives = [
   {
@@ -10,48 +17,46 @@ const motives = [
       'Cientista, professor e empreendedor brasileiro com atuação na área de engenharia de software e inovação',
     id: 1,
     name: 'Silvio Meira',
-    picture: silvio,
+    picture: Silvio,
     subject: 'Transformação Digital / Abertura',
   },
   {
     description:
-      'Cientista, professor e empreendedor brasileiro com atuação na área de engenharia de software e inovação',
+      'Analista e Gestor de Carteiras na Gari Investimentos, sócio da Slice Investimentos.',
     id: 2,
-    name: 'Silvio Meira',
-    picture: silvio,
-    subject: 'Transformação Digital / Abertura',
+    name: 'João Arthur',
+    picture: Joao,
+    subject: 'Futuro Mercado / Mesa Redonda',
   },
   {
-    description:
-      'Cientista, professor e empreendedor brasileiro com atuação na área de engenharia de software e inovação',
+    description: 'CEO da StartUp Molegolar e empreendedor da engenharia civil.',
     id: 3,
-    name: 'Silvio Meira',
-    picture: silvio,
-    subject: 'Transformação Digital / Abertura',
+    name: 'Saulo Suassuna',
+    picture: Saulo,
+    subject: 'Futuro Mercado / Mesa Redonda',
   },
   {
-    description:
-      'Cientista, professor e empreendedor brasileiro com atuação na área de engenharia de software e inovação',
+    description: 'Referência no mercado imobiliário em marketing e inovação',
     id: 4,
-    name: 'Silvio Meira',
-    picture: silvio,
-    subject: 'Transformação Digital / Abertura',
+    name: 'Gustavo Zanotto',
+    picture: Gustavo,
+    subject: 'Futuro Mercado / Mesa Redonda',
   },
   {
     description:
-      'Cientista, professor e empreendedor brasileiro com atuação na área de engenharia de software e inovação',
+      'CEO RE/MAX Brasil e Palestrante da área de reestruturação de empresas, startups e franchising.',
     id: 5,
-    name: 'Silvio Meira',
-    picture: silvio,
-    subject: 'Transformação Digital / Abertura',
+    name: 'Peixoto Accioly',
+    picture: Peixoto,
+    subject: 'Reestruturação / Mesa Redonda',
   },
   {
     description:
-      'Cientista, professor e empreendedor brasileiro com atuação na área de engenharia de software e inovação',
+      'CO-Founder & CEO da Yuca e referência no conceito City Living.',
     id: 6,
-    name: 'Silvio Meira',
-    picture: silvio,
-    subject: 'Transformação Digital / Abertura',
+    name: 'Eduardo Brennand',
+    picture: Eduardo,
+    subject: 'Futuro Mercado / Mesa Redonda',
   },
 ];
 

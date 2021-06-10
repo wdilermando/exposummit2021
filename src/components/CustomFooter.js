@@ -1,17 +1,9 @@
 import React from 'react';
-import {
-  Col,
-  Container,
-  Form,
-  FormControl,
-  InputGroup,
-  Nav,
-  Row,
-} from 'react-bootstrap';
+import { Col, Container, Nav, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import Image from 'next/image';
 import logo from '../assets/images/logo2.png';
-import fbImage from '../assets/images/socials/facebook.png';
+import { FbImage, IgImage, YtImage } from '../assets/images/socials';
 import LeadForm from './LeadForm';
 
 const Footer = styled.footer`
@@ -105,7 +97,7 @@ function CustomFooter() {
                   <IconsWrapper>
                     <a target="_blank" href="#" rel="noreferrer">
                       <img
-                        src={fbImage}
+                        src={FbImage}
                         alt="facebook link"
                         width={25}
                         height={25}
@@ -113,16 +105,16 @@ function CustomFooter() {
                     </a>
                     <a target="_blank" href="#" rel="noreferrer">
                       <img
-                        src={fbImage}
-                        alt="facebook link"
+                        src={IgImage}
+                        alt="instagram link"
                         width={25}
                         height={25}
                       />
                     </a>
                     <a target="_blank" href="#" rel="noreferrer">
                       <img
-                        src={fbImage}
-                        alt="facebook link"
+                        src={YtImage}
+                        alt="youtube link"
                         width={25}
                         height={25}
                       />

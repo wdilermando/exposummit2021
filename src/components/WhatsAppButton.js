@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 import wpp from '../assets/images/wpp.png';
 
 const WhatsAppBtn = styled.span`
@@ -8,9 +7,13 @@ const WhatsAppBtn = styled.span`
   border-radius: 50%;
   padding: 15px;
   position: fixed;
-  bottom: 20px;
+  bottom: 25px;
   right: 30px;
   z-index: 9;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 function WhatsAppButton() {
