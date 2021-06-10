@@ -7,8 +7,8 @@ import schedule from '../assets/images/schedule1.png';
 function ScheduleSection() {
   return (
     <SectionInfo id="schedule">
-      <Container fluid>
-        <ModalImage small={schedule} large={schedule} alt="event map" />;
+      <Container>
+        <ModalImage small={schedule} large={schedule} alt="event map" />
       </Container>
     </SectionInfo>
   );

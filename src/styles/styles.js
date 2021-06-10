@@ -8,6 +8,8 @@ export const SectionInfo = styled.div`
       ? theme.colors.secondary
       : theme.colors.light};
   background-image: url(${({ bg }) => bg || null});
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: ${({ hero }) => (hero ? '100vh' : 'auto')};
   padding: 10vh 10vh;
