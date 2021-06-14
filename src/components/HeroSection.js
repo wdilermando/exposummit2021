@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 import {
   DescriptionText,
   MainTitle,
@@ -38,7 +37,7 @@ function HeroSection() {
   return (
     <SectionInfo id="main" bg={bgMain} hero>
       <HeroWrapper>
-        <Image src={logo} alt="logo" width={300} height={170} />
+        <img src={logo} alt="logo" width={300} height={170} />
         <BubbleText>04 A 07 DE AGOSTO</BubbleText>
         <DescriptionText textTheme="light" textAlign="center">
           Saiba como faturar mais com imóveis. Participe do evento online que

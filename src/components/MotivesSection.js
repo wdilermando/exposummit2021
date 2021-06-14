@@ -1,6 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import {
   DescriptionText,
@@ -86,7 +85,7 @@ function MotivesSection() {
             </MotiveList>
           </Col>
           <Col>
-            <Image src={graph} alt="feature image" width={798} height={798} />
+            <Image src={graph} alt="feature" fluid />
           </Col>
         </Row>
       </Container>

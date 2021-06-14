@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import wpp from '../assets/images/wpp.png';
+import { WHATSAPP_LINK } from '../utils/constants';
 
 const WhatsAppBtn = styled.span`
   background: #25d366;
@@ -19,7 +20,9 @@ const WhatsAppBtn = styled.span`
 function WhatsAppButton() {
   return (
     <WhatsAppBtn>
-      <img src={wpp} alt="whatsapp" width={32} height={32} />
+      <a href={WHATSAPP_LINK} rel="noreferrer" target="_blank">
+        <img src={wpp} alt="whatsapp" width={32} height={32} />
+      </a>
     </WhatsAppBtn>
   );
 }

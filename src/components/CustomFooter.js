@@ -1,11 +1,14 @@
 import React from 'react';
 import { Col, Container, Nav, Row } from 'react-bootstrap';
 import styled from 'styled-components';
-import Image from 'next/image';
 import logo from '../assets/images/logo2.png';
-import { FbImage, IgImage, YtImage } from '../assets/images/socials';
+import { FbImage, IgImage, TwImage } from '../assets/images/socials';
 import LeadForm from './LeadForm';
-import { FACEBOOK_LINK, INSTAGRAM_LINK } from '../utils/constants';
+import {
+  FACEBOOK_LINK,
+  INSTAGRAM_LINK,
+  TWITTER_LINK,
+} from '../utils/constants';
 
 const Footer = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
@@ -67,7 +70,7 @@ function CustomFooter() {
       <Container>
         <Row>
           <Col xs="12" sm="6" md="2" lg="2">
-            <Image src={logo} alt="logo" width={150} height={80} />
+            <img src={logo} alt="logo" width={150} height={80} />
           </Col>
           <Col xs="12" sm="6" md="10" lg="10">
             <Row className="justify-content-md-end">
@@ -113,10 +116,10 @@ function CustomFooter() {
                         height={25}
                       />
                     </a>
-                    <a target="_blank" href="#" rel="noreferrer">
+                    <a target="_blank" href={TWITTER_LINK} rel="noreferrer">
                       <img
-                        src={YtImage}
-                        alt="youtube link"
+                        src={TwImage}
+                        alt="twitter link"
                         width={25}
                         height={25}
                       />

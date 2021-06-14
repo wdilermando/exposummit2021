@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
-import { Container } from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
 import ModalVideo from 'react-modal-video';
 import styled from 'styled-components';
 import { HighLightText, MainTitle, SectionInfo } from '../styles/styles';
@@ -25,14 +24,7 @@ function MapSection() {
             </HighLightText>
           </MainTitle>
           <WrapperVideo onClick={() => setOpen(true)}>
-            <Image
-              src={map}
-              alt="event map"
-              width={1440}
-              height={847}
-              layout="responsive"
-              quality="100"
-            />
+            <Image src={map} alt="event map" fluid />
           </WrapperVideo>
         </Container>
       </SectionInfo>

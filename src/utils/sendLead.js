@@ -7,9 +7,9 @@ const sendLead = async userLeadInfos => {
     tipo_origem: '3',
     id_outra_origem: '3',
     tipo_de_interesse: '0',
-    id_empresa: '5878',
+    id_empresa: '8957',
     url_origem: 'https://www.expoimovel.com/summit',
-    id_detalhe_outra_origem: '957',
+    id_detalhe_outra_origem: '959',
     email,
   });
   const config = {
