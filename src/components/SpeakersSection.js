@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import { DescriptionText, MainTitle, SectionInfo } from '../styles/styles';
 import {
   Silvio,
-  Eduardo,
   Gustavo,
   Joao,
   Peixoto,
   Saulo,
+  Luiz,
 } from '../assets/images/speakers';
 
 const motives = [
@@ -52,10 +52,10 @@ const motives = [
   },
   {
     description:
-      'CO-Founder & CEO da Yuca e referência no conceito City Living.',
+      'Membro do CFA Society Brazil desde 2006, exerce atualmente o cargo de CEO da Finacap.',
     id: 6,
-    name: 'Eduardo Brennand',
-    picture: Eduardo,
+    name: 'Luiz Fernando Araújo',
+    picture: Luiz,
     subject: 'Futuro Mercado / Mesa Redonda',
   },
 ];

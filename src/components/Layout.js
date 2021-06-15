@@ -7,7 +7,7 @@ function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>Expo Imóvel - Summit 2021</title>
+        <title>ExpoImóvel - Summit 2021</title>
         <link
           rel="shortcut icon"
           href="static/favicon.ico"

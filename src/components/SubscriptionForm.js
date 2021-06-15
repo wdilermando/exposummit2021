@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Formik } from 'formik';
+import { Formik, setIn } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 import { ToastContainer, toast } from 'react-toastify';
 import subscriptionLead from '../utils/subscriptionLead';
+import sendMail from '../utils/sendMail';
 
 const list1 = [
   { id: 1, name: 'IMÓVEL PARA RESIDIR' },
@@ -45,7 +46,7 @@ const schema = Yup.object().shape({
   city: Yup.string().min(3, 'Muito Curto!').required('Campo obrigatório'),
   email: Yup.string().min(3, 'Muito Curto!').required('Campo obrigatório'),
   fullName: Yup.string().min(3, 'Muito Curto!').required('Campo obrigatório'),
-  phone: Yup.number().min(7, 'Muito Curto!').required('Campo obrigatório'),
+  phone: Yup.string().min(7, 'Muito Curto!').required('Campo obrigatório'),
 });
 
 function SubscriptionForm() {
@@ -53,7 +54,7 @@ function SubscriptionForm() {
   const [investir, setInvestir] = useState(false);
   const [interesse, setInteresse] = useState(false);
 
-  async function onSubmit(values) {
+  async function onSubmit(values, { resetForm }) {
     const userLead = {
       nome_contato: values.fullName,
       email: values.email,
@@ -62,11 +63,21 @@ function SubscriptionForm() {
       interesses: values.checked.toString(),
       outros: values?.others,
     };
+
     const envia = await subscriptionLead(userLead);
     if (envia.status === 200) {
-      toast(`Enviado com sucesso!`);
+      resetForm();
       formRef.current.reset();
+      setInvestir(false);
+      setInteresse(false);
+      await sendMail(userLead.nome_contato, userLead.email);
+
+      toast(`Enviado com sucesso!`);
     } else {
+      resetForm();
+      formRef.current.reset();
+      setInvestir(false);
+      setInteresse(false);
       toast(`Falha ao enviar, tente novamente mais tarde!`);
     }
   }

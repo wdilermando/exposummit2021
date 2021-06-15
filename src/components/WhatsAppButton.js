@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import wpp from '../assets/images/wpp.png';
 import { WHATSAPP_LINK } from '../utils/constants';
 
@@ -19,11 +20,13 @@ const WhatsAppBtn = styled.span`
 
 function WhatsAppButton() {
   return (
-    <WhatsAppBtn>
-      <a href={WHATSAPP_LINK} rel="noreferrer" target="_blank">
-        <img src={wpp} alt="whatsapp" width={32} height={32} />
+    <Link href={WHATSAPP_LINK}>
+      <a rel="noreferrer" target="_blank">
+        <WhatsAppBtn>
+          <img src={wpp} alt="whatsapp" width={32} height={32} />
+        </WhatsAppBtn>
       </a>
-    </WhatsAppBtn>
+    </Link>
   );
 }
 
