@@ -3,7 +3,7 @@ import { Container, Image } from 'react-bootstrap';
 import ModalVideo from 'react-modal-video';
 import styled from 'styled-components';
 import { HighLightText, MainTitle, SectionInfo } from '../styles/styles';
-import map from '../assets/images/map2.png';
+import map from '../assets/images/map.png';
 import video from '../assets/videos/exposummitvideo.mp4';
 
 const WrapperVideo = styled.div`
@@ -17,9 +17,10 @@ function MapSection() {
       <SectionInfo id="map" bg="secondary">
         <Container fluid>
           <MainTitle textTheme="light" textAlign="center">
-            Experimente a praticidade da nossa plataforma. {'\n'}
-            Navegue por múltiplos ambientes. {'\n'}
-            <HighLightText>
+            EXPERIMENTE A PRATICIDADE DA NOSSA PLATAFORMA, {'\n'} NAVEGUE POR
+            MÚLTIPLOS AMBIENTES.
+            {'\n'}
+            <HighLightText size="22px">
               A transformação do mercado imobiliário começa aqui.
             </HighLightText>
           </MainTitle>

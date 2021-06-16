@@ -27,7 +27,7 @@ const motives = [
   },
   {
     description:
-      'Ter acesso à plataforma de transmissão online com navegação simples e propícia para realização de bons negócios e fechar vendas',
+      'Plataforma de transmissão online com navegação simples e propícia para realização de bons negócios e fechar vendas.',
     id: 4,
   },
   {
@@ -41,20 +41,29 @@ const MotiveItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: start;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 30px;
+
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   span {
     background: ${({ theme }) => theme.colors.primary};
     text-align: center;
-    margin-right: 20px;
+    margin-right: 10px;
     min-width: 50px;
     min-height: 50px;
     padding: 10px;
     border-radius: 50%;
     color: ${({ theme }) => theme.colors.light};
     font-size: 18px;
+    @media screen and (max-width: 450px) {
+      margin-bottom: 10px;
+    }
   }
 `;
 
@@ -66,7 +75,7 @@ const MotiveList = styled.div`
 function MotivesSection() {
   return (
     <SectionInfo id="motives" bg="secondary">
-      <Container fluid>
+      <Container>
         <Row>
           <Col xs="12" lg="6" md="6">
             <MainTitle textTheme="light" textAlign="center">

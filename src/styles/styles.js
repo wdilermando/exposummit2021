@@ -21,11 +21,17 @@ export const SectionInfo = styled.div`
 
 export const DescriptionText = styled.p`
   color: ${({ textTheme }) => (textTheme === 'light' ? '#FFFFFF' : '#225C9C')};
-  font-size: 1.1rem;
+  font-size: ${({ fontSize }) => fontSize || '1.1rem'};
   font-weight: 400;
   margin-bottom: 0;
+  white-space: pre-wrap;
+  width: 80%;
   text-align: ${({ textAlign }) =>
     textAlign === 'center' ? 'center' : textAlign};
+  @media screen and (max-width: 450px) {
+    margin-bottom: 3vh;
+    width: 100%;
+  }
 `;
 
 export const SubtitleText = styled.h5`
@@ -55,6 +61,7 @@ export const MainTitle = styled.h2`
 
 export const HighLightText = styled.span`
   color: ${({ theme }) => theme.colors.primary};
+  font-size: ${({ size }) => size || ''};
 `;
 
 export const BubbleText = styled.span`

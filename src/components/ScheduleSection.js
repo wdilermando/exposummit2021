@@ -2,7 +2,7 @@ import React from 'react';
 import ModalImage from 'react-modal-image';
 import { Container } from 'react-bootstrap';
 import { SectionInfo } from '../styles/styles';
-import schedule from '../assets/images/schedule1.png';
+import schedule from '../assets/images/schedule.jpg';
 
 function ScheduleSection() {
   return (

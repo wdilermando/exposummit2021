@@ -8,7 +8,7 @@ import SubscriptionForm from './SubscriptionForm';
 function FormSection() {
   return (
     <SectionInfo id="subscription">
-      <Container fluid>
+      <Container>
         <Row>
           <Col xs="12" lg="6" md="6">
             <span>
@@ -20,8 +20,8 @@ function FormSection() {
             <br />
             <DescriptionText textAlign="justify">
               Somos a grande oportunidade digital de transformação do mercado
-              imobiliário. Venha conhecer as melhores oportunidades do mercado
-              imobiliário para você investir.
+              imobiliário. Aqui você tem tudo para fazer o seu investimento
+              crescer.
             </DescriptionText>
             <br />
             <DescriptionText textAlign="justify">
@@ -32,8 +32,8 @@ function FormSection() {
             </DescriptionText>
             <br />
             <DescriptionText textAlign="justify">
-              Bem-vindos ao Expoimóvel Summit 2021 e faça bons negócios
-              investindo em imóveis.
+              Bem-vindos ao Expoimóvel Summit 2021. Invista em imóveis e faça
+              bons negócios.
             </DescriptionText>
           </Col>
           <Col>

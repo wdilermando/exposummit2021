@@ -2,13 +2,9 @@ import React from 'react';
 import { Col, Container, Nav, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import logo from '../assets/images/logo2.png';
-import { FbImage, IgImage, TwImage } from '../assets/images/socials';
+import { FbImage, IgImage } from '../assets/images/socials';
 import LeadForm from './LeadForm';
-import {
-  FACEBOOK_LINK,
-  INSTAGRAM_LINK,
-  TWITTER_LINK,
-} from '../utils/constants';
+import { FACEBOOK_LINK, INSTAGRAM_LINK } from '../utils/constants';
 
 const Footer = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
@@ -21,10 +17,12 @@ const InfosSocial = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   font-size: 14px;
 
   span {
     white-space: pre-wrap;
+    font-family: Roboto, sans-serif;
   }
 `;
 
@@ -36,7 +34,7 @@ const WrapperFormLead = styled.div`
 
   small {
     text-align: right;
-    font-size: 12px;
+    font-size: 13px;
     margin-right: 5px;
     width: 50%;
   }
@@ -47,7 +45,7 @@ const WrapperFormLead = styled.div`
 
     small {
       text-align: center;
-      font-size: 12px;
+      font-size: 13px;
       margin-bottom: 10px;
     }
   }
@@ -60,14 +58,17 @@ const IconsWrapper = styled.div`
   margin-top: 1em;
 
   a {
-    margin-left: 15px;
+    margin-left: 5px;
+    img {
+      height: 65%;
+    }
   }
 `;
 
 function CustomFooter() {
   return (
     <Footer id="contact">
-      <Container fluid>
+      <Container>
         <Row>
           <Col xs="12" sm="6" md="2" lg="2">
             <img src={logo} alt="logo" width={150} height={80} />
@@ -90,8 +91,9 @@ function CustomFooter() {
               <Col lg="8">
                 <WrapperFormLead>
                   <small>
-                    Deixe seu e-mail e receba novidades exclusivas do nosso
-                    evento
+                    Deixe seu e-mail e receba
+                    <br />
+                    novidades exclusivas do nosso evento
                   </small>
                   <LeadForm />
                 </WrapperFormLead>
@@ -100,21 +102,11 @@ function CustomFooter() {
                 <InfosSocial>
                   <span>INFOS:{'\n'}contato@expoimovel.com</span>
                   <IconsWrapper>
-                    <a target="_blank" href={FACEBOOK_LINK} rel="noreferrer">
-                      <img
-                        src={FbImage}
-                        alt="facebook link"
-                        width={25}
-                        height={25}
-                      />
-                    </a>
                     <a target="_blank" href={INSTAGRAM_LINK} rel="noreferrer">
-                      <img
-                        src={IgImage}
-                        alt="instagram link"
-                        width={25}
-                        height={25}
-                      />
+                      <img src={IgImage} alt="instagram link" />
+                    </a>
+                    <a target="_blank" href={FACEBOOK_LINK} rel="noreferrer">
+                      <img src={FbImage} alt="facebook link" />
                     </a>
                   </IconsWrapper>
                 </InfosSocial>

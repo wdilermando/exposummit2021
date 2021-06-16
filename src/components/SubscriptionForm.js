@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Formik, setIn } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 import { ToastContainer, toast } from 'react-toastify';
@@ -56,12 +56,12 @@ function SubscriptionForm() {
 
   async function onSubmit(values, { resetForm }) {
     const userLead = {
-      nome_contato: values.fullName,
-      email: values.email,
-      telefone: values.phone,
       cidade: values.city,
+      email: values.email,
       interesses: values.checked.toString(),
+      nome_contato: values.fullName,
       outros: values?.others,
+      telefone: values.phone,
     };
 
     const envia = await subscriptionLead(userLead);
@@ -72,9 +72,7 @@ function SubscriptionForm() {
       setInteresse(false);
       await sendMail(userLead.nome_contato, userLead.email);
 
-      toast(
-        `Parabéns! Você está garantido no Expoimóvel Summit 2021. Confira em sua caixa de e-mail a confirmação de sua inscrição.`
-      );
+      toast(`Parabéns! A sua inscrição foi confirmada.`);
     } else {
       resetForm();
       formRef.current.reset();

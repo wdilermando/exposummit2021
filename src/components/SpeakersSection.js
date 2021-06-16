@@ -1,15 +1,8 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
-import { DescriptionText, MainTitle, SectionInfo } from '../styles/styles';
-import {
-  Silvio,
-  Gustavo,
-  Joao,
-  Peixoto,
-  Saulo,
-  Luiz,
-} from '../assets/images/speakers';
+import { MainTitle, SectionInfo } from '../styles/styles';
+import { Silvio, Gustavo, Joao, Saulo, Luiz } from '../assets/images/speakers';
 
 const motives = [
   {
@@ -42,14 +35,6 @@ const motives = [
     picture: Gustavo,
     subject: 'Futuro Mercado / Mesa Redonda',
   },
-  // {
-  //   description:
-  //     'CEO RE/MAX Brasil e Palestrante da área de reestruturação de empresas, startups e franchising.',
-  //   id: 5,
-  //   name: 'Peixoto Accioly',
-  //   picture: Peixoto,
-  //   subject: 'Reestruturação / Mesa Redonda',
-  // },
   {
     description:
       'Membro do CFA Society Brazil desde 2006, exerce atualmente o cargo de CEO da Finacap.',
@@ -112,17 +97,36 @@ const SpeakerItem = styled.article`
 const SmallDescription = styled.small`
   color: white;
   font-size: ${({ size }) => (size ? `${size}px` : null)};
+  line-height: 16px;
+  @media screen and (max-width: 450px) {
+    margin-top: 10px;
+  }
+`;
+
+const DescriptionTextCustom = styled.p`
+  color: ${({ textTheme }) => (textTheme === 'light' ? '#FFFFFF' : '#225C9C')};
+  font-size: ${({ fontSize }) => fontSize || '1.1rem'};
+  font-weight: 400;
+  margin-bottom: 0;
+  white-space: pre-wrap;
+  width: 80%;
+  text-align: ${({ textAlign }) =>
+    textAlign === 'center' ? 'center' : textAlign};
+  @media screen and (max-width: 450px) {
+    margin-bottom: 1vh;
+    width: 100%;
+  }
 `;
 
 function SpeakersSection() {
   return (
     <SectionInfo id="motives" bg="primary">
-      <Container fluid>
+      <Container>
         <Row>
           <Col>
             <MainTitle textTheme="light" textAlign="center">
-              Conheça os palestrantes dos principais players{'\n'}do mercado que
-              estão conosco nesta edição.
+              CONHEÇA OS PALESTRANTES DOS PRINCIPAIS PLAYERS {'\n'}
+              DO MERCADO QUE ESTÃO CONOSCO NESTA EDIÇÃO.
             </MainTitle>
             <GridContainer>
               {motives.map(item => (
@@ -131,11 +135,11 @@ function SpeakersSection() {
                     <img src={item.picture} alt={item.name} />
                   </span>
                   <div>
-                    <DescriptionText textTheme="light">
+                    <DescriptionTextCustom textTheme="light">
                       {item.name}
-                    </DescriptionText>
+                    </DescriptionTextCustom>
                     <SmallDescription>{item.subject}</SmallDescription>
-                    <SmallDescription size={14}>
+                    <SmallDescription size={15}>
                       {item.description}
                     </SmallDescription>
                   </div>
