@@ -72,13 +72,15 @@ function SubscriptionForm() {
       setInteresse(false);
       await sendMail(userLead.nome_contato, userLead.email);
 
-      toast(`Enviado com sucesso!`);
+      toast(
+        `Parabéns! Você está garantido no Expoimóvel Summit 2021. Confira em sua caixa de e-mail a confirmação de sua inscrição.`
+      );
     } else {
       resetForm();
       formRef.current.reset();
       setInvestir(false);
       setInteresse(false);
-      toast(`Falha ao enviar, tente novamente mais tarde!`);
+      toast(`Falha na inscrição, tente novamente mais tarde!`);
     }
   }
 

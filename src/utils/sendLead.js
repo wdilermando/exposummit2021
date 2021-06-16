@@ -1,8 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 
-const sendLead = async userLeadInfos => {
-  const { email } = userLeadInfos;
+const sendLead = async email => {
   const data = qs.stringify({
     tipo_origem: '3',
     id_outra_origem: '3',

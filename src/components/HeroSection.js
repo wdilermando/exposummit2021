@@ -40,17 +40,21 @@ function HeroSection() {
         <img src={logo} alt="logo" width={300} height={170} />
         <BubbleText>04 A 07 DE AGOSTO</BubbleText>
         <DescriptionText textTheme="light" textAlign="center">
-          Saiba como faturar mais com imóveis. Participe do evento online que
-          vai revolucionar o mercado imobiliário global.
+          Aprenda tudo sobre investimento em imóveis.
+          <br />
+          Participe do evento online que vai transformar o mercado imobiliário,
+          trazendo informação e as melhores oportunidades de investimentos do
+          mercado.
         </DescriptionText>
         <WrapperSubtitle>
           <SubtitleText textAlign="center">
-            LIVES / <HighLightText>TALKS</HighLightText> / RODADAS DE NEGÓCIO /{' '}
+            LIVES / <HighLightText>TALKS</HighLightText> / RODADAS DE NEGÓCIO /
+            <br />
             <HighLightText>MESAS REDONDAS</HighLightText> / STAND DE VENDAS
           </SubtitleText>
         </WrapperSubtitle>
         <MainTitle textTheme="light" textAlign="center">
-          Conectar o seu negócio rende mais.
+          Faça bons negócios investindo em imóveis
         </MainTitle>
       </HeroWrapper>
     </SectionInfo>

@@ -66,11 +66,11 @@ const MotiveList = styled.div`
 function MotivesSection() {
   return (
     <SectionInfo id="motives" bg="secondary">
-      <Container>
+      <Container fluid>
         <Row>
           <Col xs="12" lg="6" md="6">
-            <MainTitle textTheme="light">
-              POR QUE DEVO PARTICIPAR DO{'\n'}
+            <MainTitle textTheme="light" textAlign="center">
+              POR QUE DEVO PARTICIPAR DO {'\n'}
               <HighLightText>EXPOIMOVEL SUMMIT?</HighLightText>
             </MainTitle>
             <MotiveList>

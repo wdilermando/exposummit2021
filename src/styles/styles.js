@@ -15,13 +15,13 @@ export const SectionInfo = styled.div`
   padding: 10vh 10vh;
 
   @media screen and (max-width: 991px) {
-    padding: 10vh 5vh;
+    padding: 10vh 2.5vh;
   }
 `;
 
 export const DescriptionText = styled.p`
   color: ${({ textTheme }) => (textTheme === 'light' ? '#FFFFFF' : '#225C9C')};
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 0;
   text-align: ${({ textAlign }) =>
@@ -70,4 +70,7 @@ export const BubbleText = styled.span`
   border-radius: 30px;
   border-bottom-right-radius: 0;
   padding: 15px;
+  @media screen and (max-width: 991px) {
+    margin-bottom: 3vh;
+  }
 `;

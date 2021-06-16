@@ -23,10 +23,10 @@ function MapSection() {
               A transformação do mercado imobiliário começa aqui.
             </HighLightText>
           </MainTitle>
-          <WrapperVideo onClick={() => setOpen(true)}>
-            <Image src={map} alt="event map" fluid />
-          </WrapperVideo>
         </Container>
+        <WrapperVideo onClick={() => setOpen(true)}>
+          <Image src={map} alt="event map" fluid />
+        </WrapperVideo>
       </SectionInfo>
       <ModalVideo
         channel="custom"

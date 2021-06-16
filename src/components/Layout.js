@@ -7,15 +7,14 @@ function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>ExpoImóvel - Summit 2021</title>
+        <title>Expoimóvel - Summit 2021</title>
         <link
           rel="shortcut icon"
           href="static/favicon.ico"
           type="image/x-icon"
         />
-        <link rel="icon" href="static/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-
         <link
           href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap"
           rel="stylesheet"

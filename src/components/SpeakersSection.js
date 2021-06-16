@@ -42,14 +42,14 @@ const motives = [
     picture: Gustavo,
     subject: 'Futuro Mercado / Mesa Redonda',
   },
-  {
-    description:
-      'CEO RE/MAX Brasil e Palestrante da área de reestruturação de empresas, startups e franchising.',
-    id: 5,
-    name: 'Peixoto Accioly',
-    picture: Peixoto,
-    subject: 'Reestruturação / Mesa Redonda',
-  },
+  // {
+  //   description:
+  //     'CEO RE/MAX Brasil e Palestrante da área de reestruturação de empresas, startups e franchising.',
+  //   id: 5,
+  //   name: 'Peixoto Accioly',
+  //   picture: Peixoto,
+  //   subject: 'Reestruturação / Mesa Redonda',
+  // },
   {
     description:
       'Membro do CFA Society Brazil desde 2006, exerce atualmente o cargo de CEO da Finacap.',
@@ -66,11 +66,20 @@ const GridContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   justify-content: center;
   justify-items: center;
+
+  @media screen and (max-width: 450px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 `;
 
 const SpeakerItem = styled.article`
   display: flex;
   flex-direction: row;
+
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   span img {
     -webkit-border-radius: 30px;
@@ -83,8 +92,9 @@ const SpeakerItem = styled.article`
     width: 200px;
     height: 100px;
     @media screen and (max-width: 450px) {
-      width: 150px;
-      height: 80px;
+      width: 100%;
+      height: 150px;
+      margin-bottom: 10px;
     }
   }
   div {
@@ -92,6 +102,10 @@ const SpeakerItem = styled.article`
     display: flex;
     justify-content: space-between;
     margin-left: 15px;
+
+    @media screen and (max-width: 450px) {
+      margin-left: 0px;
+    }
   }
 `;
 
@@ -103,7 +117,7 @@ const SmallDescription = styled.small`
 function SpeakersSection() {
   return (
     <SectionInfo id="motives" bg="primary">
-      <Container>
+      <Container fluid>
         <Row>
           <Col>
             <MainTitle textTheme="light" textAlign="center">

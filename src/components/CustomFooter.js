@@ -67,7 +67,7 @@ const IconsWrapper = styled.div`
 function CustomFooter() {
   return (
     <Footer id="contact">
-      <Container>
+      <Container fluid>
         <Row>
           <Col xs="12" sm="6" md="2" lg="2">
             <img src={logo} alt="logo" width={150} height={80} />
@@ -90,7 +90,7 @@ function CustomFooter() {
               <Col lg="8">
                 <WrapperFormLead>
                   <small>
-                    Deixe seu email e receba novidades exclusivas do nosso
+                    Deixe seu e-mail e receba novidades exclusivas do nosso
                     evento
                   </small>
                   <LeadForm />
@@ -112,14 +112,6 @@ function CustomFooter() {
                       <img
                         src={IgImage}
                         alt="instagram link"
-                        width={25}
-                        height={25}
-                      />
-                    </a>
-                    <a target="_blank" href={TWITTER_LINK} rel="noreferrer">
-                      <img
-                        src={TwImage}
-                        alt="twitter link"
                         width={25}
                         height={25}
                       />

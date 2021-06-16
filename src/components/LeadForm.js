@@ -29,7 +29,7 @@ function LeadForm() {
   async function onSubmit({ email }) {
     const envia = await sendLead(email);
     if (envia.status === 200) {
-      toast(`Enviado com sucesso!`);
+      toast(`Email cadastrado na newsletter com sucesso!`);
       formRef2.current.reset();
     } else {
       toast(`Falha ao enviar, tente novamente mais tarde!`);
@@ -50,7 +50,7 @@ function LeadForm() {
             <InputGroup hasValidation>
               <Form.Control
                 type="email"
-                placeholder="Seu melhor email"
+                placeholder="Seu melhor e-mail"
                 name="email"
                 value={values.email}
                 onChange={handleChange}
