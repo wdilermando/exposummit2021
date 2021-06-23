@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from 'react-bootstrap';
 
 export const SectionInfo = styled.div`
   background: ${({ bg, theme }) =>
@@ -16,6 +17,7 @@ export const SectionInfo = styled.div`
 
   @media screen and (max-width: 991px) {
     padding: 10vh 2.5vh;
+    height: ${({ hero }) => (hero ? 'auto' : 'auto')};
   }
 `;
 
@@ -79,5 +81,20 @@ export const BubbleText = styled.span`
   padding: 15px;
   @media screen and (max-width: 991px) {
     margin-bottom: 3vh;
+  }
+`;
+
+export const CustomButton = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.primary};
+  border: none;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  color: ${({ theme }) => theme.colors.light};
+  border-radius: 25px;
+  padding: 0.4em 0.8em;
+  transition: background-color 0.3s linear;
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondary};
+    transition: background-color 0.3s linear;
   }
 `;

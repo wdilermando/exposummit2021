@@ -2,12 +2,19 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { MainTitle, SectionInfo } from '../styles/styles';
-import { Silvio, Gustavo, Joao, Saulo, Luiz } from '../assets/images/speakers';
+import {
+  Silvio,
+  Gustavo,
+  Joao,
+  Saulo,
+  Luiz,
+  Ecio,
+} from '../assets/images/speakers';
 
 const motives = [
   {
     description:
-      'Cientista, professor e empreendedor brasileiro com atuação na área de engenharia de software e inovação',
+      'Silvio Meira é professor extraordinário da Cesar School e o Cientista-Chefe na The Digital Strategy Company. É Professor Emérito do Centro de Informática da UFPE',
     id: 1,
     name: 'Silvio Meira',
     picture: Silvio,
@@ -15,21 +22,21 @@ const motives = [
   },
   {
     description:
-      'Analista e Gestor de Carteiras na Gari Investimentos, sócio da Slice Investimentos.',
+      'Analista e Gestor de Carteiras na Garín Investimentos, sócio da Slice Investimentos',
     id: 2,
     name: 'João Arthur',
     picture: Joao,
     subject: 'Futuro Mercado / Mesa Redonda',
   },
   {
-    description: 'CEO da StartUp Molegolar e empreendedor da engenharia civil.',
+    description: 'CEO da StartUp Molegolar e empreendedor da Engenharia Civil.',
     id: 3,
     name: 'Saulo Suassuna',
     picture: Saulo,
     subject: 'Futuro Mercado / Mesa Redonda',
   },
   {
-    description: 'Referência no mercado imobiliário em marketing e inovação',
+    description: 'Referência no mercado imobiliário em Marketing e Inovação',
     id: 4,
     name: 'Gustavo Zanotto',
     picture: Gustavo,
@@ -37,7 +44,14 @@ const motives = [
   },
   {
     description:
-      'Membro do CFA Society Brazil desde 2006, exerce atualmente o cargo de CEO da Finacap.',
+      'Economista, M.S., Ph.D. e Pós-Doutor em Economia. Professor da UFPE. Colunista da CBN Recife e do Diário de Pernambuco. Consultor com mais de 500 projetos de viabilidade e captações acima de R$ 100 Milhões.',
+    id: 5,
+    name: 'Ecio Costa',
+    picture: Ecio,
+    subject: 'Economia e Negócios / Palestrante',
+  },
+  {
+    description: 'CEO da Finacap.',
     id: 6,
     name: 'Luiz Fernando Araújo',
     picture: Luiz,
@@ -60,10 +74,12 @@ const GridContainer = styled.div`
 const SpeakerItem = styled.article`
   display: flex;
   flex-direction: row;
+  width: 100%;
 
   @media screen and (max-width: 450px) {
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
+    width: 100%;
   }
 
   span img {
@@ -76,6 +92,7 @@ const SpeakerItem = styled.article`
     object-fit: cover;
     width: 200px;
     height: 100px;
+
     @media screen and (max-width: 450px) {
       width: 100%;
       height: 150px;
@@ -85,8 +102,9 @@ const SpeakerItem = styled.article`
   div {
     flex-direction: column;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     margin-left: 15px;
+    text-align: left;
 
     @media screen and (max-width: 450px) {
       margin-left: 0px;
@@ -97,23 +115,22 @@ const SpeakerItem = styled.article`
 const SmallDescription = styled.small`
   color: white;
   font-size: ${({ size }) => (size ? `${size}px` : null)};
-  line-height: 16px;
+  line-height: 21px;
+  margin-bottom: 1vh;
   @media screen and (max-width: 450px) {
     margin-top: 10px;
+    font-size: 17px;
   }
 `;
 
 const DescriptionTextCustom = styled.p`
   color: ${({ textTheme }) => (textTheme === 'light' ? '#FFFFFF' : '#225C9C')};
-  font-size: ${({ fontSize }) => fontSize || '1.1rem'};
-  font-weight: 400;
+  font-size: ${({ fontSize }) => fontSize || '1.3em'};
+  font-weight: 700;
   margin-bottom: 0;
-  white-space: pre-wrap;
-  width: 80%;
   text-align: ${({ textAlign }) =>
     textAlign === 'center' ? 'center' : textAlign};
   @media screen and (max-width: 450px) {
-    margin-bottom: 1vh;
     width: 100%;
   }
 `;
@@ -139,7 +156,7 @@ function SpeakersSection() {
                       {item.name}
                     </DescriptionTextCustom>
                     <SmallDescription>{item.subject}</SmallDescription>
-                    <SmallDescription size={15}>
+                    <SmallDescription size={14}>
                       {item.description}
                     </SmallDescription>
                   </div>

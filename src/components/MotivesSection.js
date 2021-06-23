@@ -78,9 +78,9 @@ function MotivesSection() {
       <Container>
         <Row>
           <Col xs="12" lg="6" md="6">
-            <MainTitle textTheme="light" textAlign="center">
+            <MainTitle textTheme="light" textAlign="left">
               POR QUE DEVO PARTICIPAR DO {'\n'}
-              <HighLightText>EXPOIMOVEL SUMMIT?</HighLightText>
+              <HighLightText>EXPOIMÓVEL SUMMIT?</HighLightText>
             </MainTitle>
             <MotiveList>
               {motives.map(item => (

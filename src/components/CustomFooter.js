@@ -37,6 +37,9 @@ const WrapperFormLead = styled.div`
     font-size: 13px;
     margin-right: 5px;
     width: 50%;
+    @media screen and (max-width: 450px) {
+      width: 100%;
+    }
   }
 
   @media screen and (max-width: 450px) {
@@ -60,8 +63,16 @@ const IconsWrapper = styled.div`
   a {
     margin-left: 5px;
     img {
-      height: 65%;
+      height: 30px;
+      width: 30px;
     }
+  }
+`;
+const ImageFooterLogoWrapper = styled.div`
+  @media screen and (max-width: 450px) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
   }
 `;
 
@@ -71,7 +82,9 @@ function CustomFooter() {
       <Container>
         <Row>
           <Col xs="12" sm="6" md="2" lg="2">
-            <img src={logo} alt="logo" width={150} height={80} />
+            <ImageFooterLogoWrapper>
+              <img src={logo} alt="logo" width={150} height={80} />
+            </ImageFooterLogoWrapper>
           </Col>
           <Col xs="12" sm="6" md="10" lg="10">
             <Row className="justify-content-md-end">

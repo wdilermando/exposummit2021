@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 import { ToastContainer, toast } from 'react-toastify';
+import { CustomButton } from '../styles/styles';
 import subscriptionLead from '../utils/subscriptionLead';
 import sendMail from '../utils/sendMail';
 
@@ -18,21 +19,6 @@ const list1 = [
 const CustomFormInput = styled(Form.Control)`
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   border-radius: 25px;
-`;
-
-const CustomButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.primary};
-  border: none;
-  margin-bottom: 0.5em;
-  margin-top: 1em;
-  color: ${({ theme }) => theme.colors.light};
-  border-radius: 25px;
-  padding: 0.4em 0.8em;
-  transition: background-color 0.3s linear;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
-    transition: background-color 0.3s linear;
-  }
 `;
 
 const WrapperButton = styled.div`
@@ -182,7 +168,7 @@ function SubscriptionForm() {
 
           {investir && (
             <>
-              {list1.map(item => (
+              {list1.map((item) => (
                 <Form.Check
                   custom
                   type="checkbox"

@@ -7,6 +7,7 @@ import {
   SubtitleText,
   BubbleText,
   HighLightText,
+  CustomButton,
 } from '../styles/styles';
 import logo from '../assets/images/logo1.png';
 import bgMain from '../assets/images/bgMain.png';
@@ -16,13 +17,13 @@ const HeroWrapper = styled.article`
   height: 100%;
   align-items: center;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   justify-content: space-evenly;
 
   @media screen and (max-width: 450px) {
     width: 100%;
-    margin-top: 35px;
+    margin-top: 20px;
   }
 `;
 
@@ -56,6 +57,9 @@ function HeroSection() {
         <MainTitle textTheme="light" textAlign="center">
           INVESTIR EM IMÓVEIS É O BOM NEGÓCIO.
         </MainTitle>
+        <CustomButton type="button" href="/#subscription" rel="noopener">
+          INSCREVA-SE
+        </CustomButton>
       </HeroWrapper>
     </SectionInfo>
   );

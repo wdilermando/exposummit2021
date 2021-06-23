@@ -4,7 +4,14 @@ import logo from '../assets/images/logo1.png';
 
 function CustomNavbar() {
   return (
-    <Navbar className="bg-expo" expand="lg" variant="dark" fixed="top">
+    <Navbar
+      className="bg-expo"
+      expand="lg"
+      variant="dark"
+      stick="top"
+      fixed="top"
+      collapseOnSelect
+    >
       <Navbar.Brand
         href="#home"
         className="d-block d-sm-block d-md-block d-xl-none d-lg-none"
