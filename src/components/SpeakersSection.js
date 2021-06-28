@@ -1,63 +1,10 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
+import useSWR from 'swr';
+import { ALL_SPEAKERS } from '../lib/queries';
+import { fetcher } from '../lib/api';
 import { MainTitle, SectionInfo } from '../styles/styles';
-import {
-  Silvio,
-  Gustavo,
-  Joao,
-  Saulo,
-  Luiz,
-  Ecio,
-} from '../assets/images/speakers';
-
-const motives = [
-  {
-    description:
-      'Silvio Meira é professor extraordinário da Cesar School e o Cientista-Chefe na The Digital Strategy Company. É Professor Emérito do Centro de Informática da UFPE',
-    id: 1,
-    name: 'Silvio Meira',
-    picture: Silvio,
-    subject: 'Transformação Digital / Abertura',
-  },
-  {
-    description:
-      'Analista e Gestor de Carteiras na Garín Investimentos, sócio da Slice Investimentos',
-    id: 2,
-    name: 'João Arthur',
-    picture: Joao,
-    subject: 'Futuro Mercado / Mesa Redonda',
-  },
-  {
-    description: 'CEO da StartUp Molegolar e empreendedor da Engenharia Civil.',
-    id: 3,
-    name: 'Saulo Suassuna',
-    picture: Saulo,
-    subject: 'Futuro Mercado / Mesa Redonda',
-  },
-  {
-    description: 'Referência no mercado imobiliário em Marketing e Inovação',
-    id: 4,
-    name: 'Gustavo Zanotto',
-    picture: Gustavo,
-    subject: 'Futuro Mercado / Mesa Redonda',
-  },
-  {
-    description:
-      'Economista, M.S., Ph.D. e Pós-Doutor em Economia. Professor da UFPE. Colunista da CBN Recife e do Diário de Pernambuco. Consultor com mais de 500 projetos de viabilidade e captações acima de R$ 100 Milhões.',
-    id: 5,
-    name: 'Ecio Costa',
-    picture: Ecio,
-    subject: 'Economia e Negócios / Palestrante',
-  },
-  {
-    description: 'CEO da Finacap.',
-    id: 6,
-    name: 'Luiz Fernando Araújo',
-    picture: Luiz,
-    subject: 'Futuro Mercado / Mesa Redonda',
-  },
-];
 
 const GridContainer = styled.div`
   display: grid;
@@ -136,37 +83,58 @@ const DescriptionTextCustom = styled.p`
 `;
 
 function SpeakersSection() {
+  const { data, error } = useSWR(ALL_SPEAKERS, fetcher);
+
+  if (error) {
+    return (
+      <div>
+        <pre>
+          Não foi possível carregar a lista de PALESTRANTES, volte novamente
+          mais tarde :(
+        </pre>
+      </div>
+    );
+  }
+
+  if (data) {
+    return (
+      <SectionInfo id="speakers" bg="primary">
+        <Container>
+          <Row>
+            <Col>
+              <MainTitle textTheme="light" textAlign="center">
+                CONHEÇA OS PALESTRANTES DOS PRINCIPAIS PLAYERS {'\n'}
+                DO MERCADO QUE ESTÃO CONOSCO NESTA EDIÇÃO.
+              </MainTitle>
+              <GridContainer>
+                {data.allSpeakers.map((item) => (
+                  <SpeakerItem key={item.id}>
+                    <span>
+                      <img src={item.picture.url} alt={item.name} />
+                    </span>
+                    <div>
+                      <DescriptionTextCustom textTheme="light">
+                        {item.name}
+                      </DescriptionTextCustom>
+                      <SmallDescription>{item.subject}</SmallDescription>
+                      <SmallDescription size={14}>
+                        {item.description}
+                      </SmallDescription>
+                    </div>
+                  </SpeakerItem>
+                ))}
+              </GridContainer>
+            </Col>
+          </Row>
+        </Container>
+      </SectionInfo>
+    );
+  }
+
   return (
-    <SectionInfo id="motives" bg="primary">
-      <Container>
-        <Row>
-          <Col>
-            <MainTitle textTheme="light" textAlign="center">
-              CONHEÇA OS PALESTRANTES DOS PRINCIPAIS PLAYERS {'\n'}
-              DO MERCADO QUE ESTÃO CONOSCO NESTA EDIÇÃO.
-            </MainTitle>
-            <GridContainer>
-              {motives.map(item => (
-                <SpeakerItem key={item.id}>
-                  <span>
-                    <img src={item.picture} alt={item.name} />
-                  </span>
-                  <div>
-                    <DescriptionTextCustom textTheme="light">
-                      {item.name}
-                    </DescriptionTextCustom>
-                    <SmallDescription>{item.subject}</SmallDescription>
-                    <SmallDescription size={14}>
-                      {item.description}
-                    </SmallDescription>
-                  </div>
-                </SpeakerItem>
-              ))}
-            </GridContainer>
-          </Col>
-        </Row>
-      </Container>
-    </SectionInfo>
+    <div>
+      <span>Loading...</span>
+    </div>
   );
 }
 
