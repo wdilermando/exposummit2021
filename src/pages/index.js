@@ -12,7 +12,7 @@ export default function Home() {
       <HeroSection />
       <FormSection />
       <MotivesSection />
-      {/* <SpeakersSection /> */}
+      <SpeakersSection />
       <MapSection />
       <ScheduleSection />
       <WhatsAppButton />

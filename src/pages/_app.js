@@ -1,7 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import 'react-modal-video/css/modal-video.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Layout from '../components/Layout';
 import GlobalStyle from '../styles/globalStyles';
